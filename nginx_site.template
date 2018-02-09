@@ -5,8 +5,11 @@ server {
 	index index.html index.backup.html;
 
 	server_name localhost;
+	
+	error_page 404 https://www.theuselesswebindex.com/error;
 
         location /static { 
+		alias /usr/share/nginx/html;
 		add_header X-Served-By docker-nginx;
 		try_files $uri $uri/ =404;
 	 }
