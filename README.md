@@ -1,2 +1,2 @@
-# web_dynamic-nginx
-Automatic build for Application Accelerator
+# accelerator-prototype-3
+Application Accelerator Prototype 3
