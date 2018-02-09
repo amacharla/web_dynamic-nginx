@@ -4,15 +4,15 @@ server {
 	root /usr/share/nginx/html;
 	index index.html index.backup.html;
 
+	add_header X-Served-By docker-nginx;
+
 	server_name localhost;
 	
 	error_page 404 https://www.theuselesswebindex.com/error;
 
-        location /static { 
-		alias /usr/share/nginx/html;
-		add_header X-Served-By docker-nginx;
-		try_files $uri $uri/ =404;
-	 }
+        #location /static { 
+	#	try_files $uri $uri/ =404;
+	# }
 
 	location / { try_files $uri @webapp; }
 	location @webapp {
