@@ -10,9 +10,9 @@ server {
 	
 	error_page 404 https://www.theuselesswebindex.com/error;
 
-        #location /static { 
-	#	try_files $uri $uri/ =404;
-	# }
+        location /static { 
+		try_files $uri $uri/ =404;
+	}
 
 	location / { try_files $uri @webapp; }
 	location @webapp {
