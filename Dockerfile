@@ -18,4 +18,5 @@ COPY nginx_site.template /etc/nginx/conf.d/nginx_site.template
 RUN ln -fs /etc/nginx/conf.d/nginx_site.template /etc/nginx/conf.d/default.conf 
 
 # Make NGINX run on the foreground
+CMD ["sleep", "5"]
 CMD ["nginx", "-g", "daemon off;"]
